@@ -5,6 +5,10 @@ import { UserIdentification } from "../pages/UserIdentification";
 import { Welcome } from "../pages/Welcome";
 import { Confirmation } from "../pages/Confirmation";
 import { PlantSelect } from "../pages/PlantSelect";
+import { PlantSave } from "../pages/PlantSave";
+import MyPlants from "../pages/MyPlants";
+import { TabActions } from "@react-navigation/native";
+import AuthRoutes from "./tab.routes";
 
 const stackRoutes = createStackNavigator();
 
@@ -29,7 +33,14 @@ const AppRoutes: React.FC = () => (
       component={Confirmation} />
     <stackRoutes.Screen 
       name="PlantSelect" 
-      component={PlantSelect} />
+      component={AuthRoutes} />
+    <stackRoutes.Screen 
+      name="PlantSave" 
+      component={PlantSave} />
+
+    <stackRoutes.Screen 
+      name="MyPlants" 
+      component={AuthRoutes} />
   </stackRoutes.Navigator>
 );
 
