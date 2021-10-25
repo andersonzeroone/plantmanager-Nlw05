@@ -5,6 +5,7 @@ import {
   Text,
   Image,
   FlatList,
+  Alert,
 } from 'react-native';
 
 import {Header} from '../components/Header';
@@ -14,8 +15,10 @@ import colors from '../styles/colors';
 import waterdrop from '../assets/waterdrop.png'
 import { formatDistance } from 'date-fns/esm'
 import { pt } from 'date-fns/locale'
-import { loadPlant, PlantProps } from '../libs/storage'
+import { loadPlant, PlantProps, removePlant } from '../libs/storage'
 import fonts from '../styles/fonts';
+import { Load } from '../components/Load';
+import { ScrollView } from 'react-native-gesture-handler';
 
 
 const MyPlants: React.FC = () => {
@@ -23,6 +26,28 @@ const MyPlants: React.FC = () => {
   const [loading, setLoading] = useState(true)
   const [nextWatered, setNextWatered] = useState<string>()
 
+  function handleRemove(plant:PlantProps){
+    Alert.alert('Remover',`Deseja remover a ${plant.name}`,[{  
+      text:'Não  🙏',
+      style:'cancel'
+    },
+    {
+      text:'Sim',
+      onPress: async ()=>{
+        try{           
+            await removePlant(plant.id);
+
+            setMyPlants((oldData) =>
+              oldData.filter((item) => item.id  !== plant.id)
+            );
+
+        }catch(error){
+          Alert.alert('Não foi possivel remover')
+        }
+      }
+    }
+  ])
+  }
   useEffect(() => {
     async function loadStorageData() {
       const storagedPlants = await loadPlant()
@@ -42,10 +67,12 @@ const MyPlants: React.FC = () => {
     loadStorageData()
   }, [])
 
-  // if (loading) return <Loading />
+  if(loading)
+    return <Load/>
 
   return (
-    <View style={styles.container}>
+
+      <View style={styles.container}>
       <Header/>
       <View style={styles.spotlight}>
         <Image
@@ -64,12 +91,15 @@ const MyPlants: React.FC = () => {
 
         <FlatList
           data={myPlants}
-          keyExtractor={(item: any) => String(item.id)}
-          renderItem={({ item }: any) => (
-            <PlantCardSecondary data={item}/>
+          keyExtractor={(item) => String(item.id)}
+          renderItem={({ item }) => (
+            <PlantCardSecondary 
+              data={item}
+              handleRemove={()=> handleRemove(item)}
+            />
           )}
           showsVerticalScrollIndicator={false}
-          contentContainerStyle={{flex:1}}
+          // contentContainerStyle={{flex:1}}
         />
         
       </View>  
