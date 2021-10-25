@@ -1,25 +1,40 @@
-import React from 'react';
-import AppLoading from 'expo-app-loading';
-import Routes from './src/routes';
+import React, { useEffect } from 'react';
+import AppLoading from "expo-app-loading";
+import * as Notifications from "expo-notifications"
 
-import { 
-  useFonts, 
-  Jost_400Regular,
-  Jost_600SemiBold  
-} from '@expo-google-fonts/jost';
+import Routes from "./src/routes";
+import { PlantProps } from "./src/libs/storage";
 
+import { useFonts, Jost_400Regular, Jost_600SemiBold } from "@expo-google-fonts/jost";
 
 export default function App() {
   const [fontsLoaded] = useFonts({
     Jost_400Regular,
-    Jost_600SemiBold  
+    Jost_600SemiBold
   });
 
-  if(!fontsLoaded){
-    return<AppLoading/>
-  }
+  useEffect(() => {
+    const subscription = Notifications.addNotificationReceivedListener(
+      async notification => {
+        const data = notification.request.content.data.plant as PlantProps;
+        console.log(data);
+      });
+
+      async function notificationsData() {
+        const dataR = await Notifications.getAllScheduledNotificationsAsync();
+        console.log("##########Notificacoes agendadas###########")
+        console.log(dataR);
+      }
+
+      notificationsData();
+      
+      return () => subscription.remove();
+  }, []);
+
+  if (!fontsLoaded)
+    return <AppLoading />
 
   return (
-    <Routes/>
-  );
+    <Routes />
+  )
 }

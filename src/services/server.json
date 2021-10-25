@@ -20,8 +20,8 @@
       "photo": "https://storage.googleapis.com/golden-wind/nextlevelweek/05-plantmanager/1.svg",
       "environments": ["living_room", "kitchen"],
       "frequency": {
-        "times": 2,
-        "repeat_every": "week"
+        "times": 1,
+        "repeat_every": "day"
       }
     },
     {
