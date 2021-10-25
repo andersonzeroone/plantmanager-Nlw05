@@ -62,8 +62,8 @@ export function PlantSelect() {
         return setLoading(true);
 
       if(page > 1){
-        setPlants(oldValue => [...oldValue, data]);
-        setFilteredPlants(oldValue => [...oldValue, data]);
+        setPlants(oldValue => [...oldValue, ...data]);
+        setFilteredPlants(oldValue => [...oldValue, ...data]);
       }else{
         setPlants(data);
         setFilteredPlants(data);
@@ -109,7 +109,7 @@ export function PlantSelect() {
       <View style={styles.header}>
         <Header />
 
-        <Text style={styles.title}>Em qual ambiente</Text>
+        <Text style={styles.title}>Em qual ambiente88</Text>
         <Text style={styles.subTitle}>você quer colocar sua planata?</Text>
       </View>
 

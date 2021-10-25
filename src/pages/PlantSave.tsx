@@ -118,7 +118,6 @@ export function PlantSave(){
             <DateTimePicker
               value={selectedDatetime}
               mode='time'
-              display='spinner'
               onChange={handleChangerTime}
             />
           )}
