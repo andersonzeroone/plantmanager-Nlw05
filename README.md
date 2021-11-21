@@ -37,14 +37,14 @@ Projeto desenvolvido durante a NLW - Next Level Week oferecida pela  [Rocketseat
 ##  Funcionalidades
 
 - [x] Listar plantas.
-  - [x] Adicionar e remover planatas.
-  - [x] Definir lembrantes para cada planta.
-  - [x] Recebimento de notificações de lembrete de cada planata.
+  - [x] Adicionar e remover plantas.
+  - [x] Definir lembretes para cada planta.
+  - [x] Recebimento de notificações de lembrete de cada planta.
   - [x] além de selecionar um ou mais ítens de coleta: 
 ---
 
 ## Layout
-Você pode acessar o Layout pelo Figma atravês <a href="https://www.figma.com/file/BThXfmgEFRfDkbcd1dTXf4/PlantManager-(Copy)?node-id=0%3A1">desse link</a>.
+Você pode acessar o Layout pelo Figma através <a href="https://www.figma.com/file/BThXfmgEFRfDkbcd1dTXf4/PlantManager-(Copy)?node-id=0%3A1">desse link</a>.
 
 <br/>
 
@@ -55,7 +55,7 @@ Você pode acessar o Layout pelo Figma atravês <a href="https://www.figma.com/f
 ### Pré-requisitos
 
 Antes de começar, você vai precisar ter instalado em sua máquina as seguintes ferramentas:
-[Git](https://git-scm.com) e um editor para trabalhar com o código como [VSCode](https://code.visualstudio.com/)
+[Git](https://git-scm.com) é um editor para trabalhar com o código como [VSCode](https://code.visualstudio.com/)
 
 #### 🎲 Rodando o projeto
 
@@ -77,7 +77,7 @@ baseURL: 'http://seu-endereço-de-Ip:3333'
 # Execute a aplicação
 $ expo start
 
-# O projeto inciará na porta:3333 - acesse http://localhost:3333 
+# O projeto iniciará na porta:3333 - acesse http://localhost:3333 
 
 # No arquivo packge.json na raiz do projeto, no script "json-server" substitua o endereço de ip pelo seu endereço de ip.
 
@@ -144,7 +144,7 @@ As seguintes ferramentas foram usadas na construção do projeto:
 
 ## Licença
 
-Este projeto esta sobe a licença [MIT](./LICENSE).
+Este projeto está sob a licença [MIT](./LICENSE).
 
 Feito com ❤️ por Anderson Pablo 👋🏽 [Entre em contato!](https://www.linkedin.com/in/anderson-pablo-js/)
 
