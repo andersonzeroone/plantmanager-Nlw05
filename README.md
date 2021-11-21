@@ -40,7 +40,6 @@ Projeto desenvolvido durante a NLW - Next Level Week oferecida pela  [Rocketseat
   - [x] Adicionar e remover plantas.
   - [x] Definir lembretes para cada planta.
   - [x] Recebimento de notificações de lembrete de cada planta.
-  - [x] além de selecionar um ou mais ítens de coleta: 
 ---
 
 ## Layout
