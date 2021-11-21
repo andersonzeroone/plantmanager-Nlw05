@@ -29,7 +29,7 @@
 
 <p align="left">Plant Manager é um aplicativo que ajuda a lembrar de regar e acompanhar suas plantas.
 
-Projeto desenvolvido durante a NLW - Next Level Week oferecida pela  [Rocketseat](https://blog.rocketseat.com.br/primeira-next-level-week/).. O NLW é uma experiência online com muito conteúdo prático, desafios e hacks onde o conteúdo fica disponível durante uma semana.
+Projeto desenvolvido durante a NLW - Next Level Week oferecida pela  [Rocketseat](https://blog.rocketseat.com.br/primeira-next-level-week/). O NLW é uma experiência online com muito conteúdo prático, desafios e hacks onde o conteúdo fica disponível durante uma semana.
 </p>
 
 <br/>
